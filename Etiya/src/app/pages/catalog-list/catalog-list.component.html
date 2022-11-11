@@ -1,0 +1,45 @@
+<div style="margin-top: 150px" class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <h1 class="text-center">Select Catalogs</h1>
+        <form [formGroup]="catalogForm">
+          <div class="form-check">
+            <div class="m-lg- col-md-4" *ngFor="let catalog of catalogs">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="1"
+                value="1"
+                name="flexRadioDefault"
+                id="flexRadioDefault2"
+                [value]="catalog.name"
+                (change)="onChange($event)"
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                {{ catalog.name }} Price: {{ catalog.price }}₺
+              </label>
+            </div>
+          </div>
+          <hr />
+          <div class="col-lg-12 col-md-6">
+            <div
+              class="buttons"
+              style="display: flex; justify-content: space-between"
+            >
+              <button class="btn btn-primary mb-5" (click)="back()">
+                Back
+              </button>
+
+              <div>
+                <button class="btn btn-primary mb-5" (click)="next()">
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
